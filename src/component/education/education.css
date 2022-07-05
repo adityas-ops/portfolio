@@ -1,0 +1,98 @@
+.edu1 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    padding-top: 90px;
+}
+
+.edu {
+    width: 80%;
+    /* height: 100vh; */
+    /* height: fit-content; */
+}
+
+.edu h2 {
+    font-size: 50px;
+}
+
+.edu-heading {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    justify-content: center;
+    font-size: 35px;
+    color: white;
+}
+
+.edu-main {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.edu-content {
+    height: 200px;
+    width: 300px;
+    flex: 60%;
+    /* display: flex; */
+    justify-content: center;
+
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    text-overflow: clip;
+    margin: 40px;
+    background: rgba(255, 255, 255, 0.55);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 10px;
+    color: black;
+
+}
+
+.p_1 {
+    color: black;
+    margin: 40px;
+    font-weight: 600;
+    font-size: 200px;
+}
+
+p {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.edu-image {
+    flex: 40%;
+    height: 200px;
+    width: 300px;
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; */
+    text-align: center;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 100%;
+
+}
+
+.h4 {
+    font-size: 24px;
+    color: rgb(110, 8, 8);
+    font-weight: 900;
+}
+
+.img {
+    margin-top: 20px;
+    height: 200px;
+    width: 200px;
+}
