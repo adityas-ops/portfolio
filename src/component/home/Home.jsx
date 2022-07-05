@@ -54,7 +54,7 @@ function Home() {
               <div className='btn1'>
                 <div className='btn'>
                   <button className='but'><NavLink to="/Contact" activeClassName="active">Contact</NavLink></button>
-                  <button className='but'><a href="aditya.jpg">Resume</a></button>
+                  <button className='but'><a href="alr.pdf">Resume</a></button>
                 </div>
 
               </div>
