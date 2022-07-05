@@ -58,7 +58,7 @@ function Education() {
                         <h4 className='h4'>Intermediate (2017-2019)</h4>
                         {/* <br/> */}
                         <p className='p-1'>
-                            I have passed INTERMEDIATE examination from MAHARSHI ARVIND VIDYA MANDIR KASIA KUSHINAGAR, Board UTTAR PRADESH BOARD with aggregate 76%.
+                            I have passed Intermediate examination from Maharshi Arvind Vidya Mandir Kasia kushinagar, Board UTTAR PRADESH BOARD with aggregate 76%.
                         </p>
                     </div>
                     <div className='edu-image'>
@@ -74,7 +74,7 @@ function Education() {
                         <h4 className='h4'>High School (2015-2017)</h4>
                         {/* <br/> */}
                         <p className='p-1'>
-                            I have passed HIGHSCHOOL examination from MAHARSHI ARVIND VIDYA MANDIR KASIA KUSHINAGAR, Board UTTAR PRADESH BOARD with aggregate 85%.
+                            I have passed highschool examination from Maharshi Arvind Vidya Mandir Kasia kushinagar, Board UTTAR PRADESH BOARD with aggregate 85%.
                         </p>
                     </div>
                     <div className='edu-image'>
