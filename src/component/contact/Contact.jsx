@@ -4,6 +4,9 @@ import Lottie from "react-lottie";
 import animation from "./form.json";
 import emailjs from '@emailjs/browser';
 import { FaMailBulk, FaPhoneAlt, FaHome } from 'react-icons/fa';
+import toast, { Toaster } from 'react-hot-toast';
+
+const notify = () => toast('Response Submitted Successfully ✅');
 function Contact() {
 
 
@@ -19,9 +22,7 @@ function Contact() {
                 console.log(error.text);
             });
     };
-    const emit = () => {
-        <font>hello</font>
-    }
+
 
     const defaultOptions1 = {
         loop: true,
@@ -83,7 +84,30 @@ function Contact() {
                                     </textarea>
                                     <br />
                                     {/* <button type='submit' className='btn-nav sub'>Submit</button> */}
-                                    <input type="submit" value="Send" className='btn-nav sub' onClick={emit} />
+                                    <input type="submit" value="Send" className='btn-nav sub' onClick={notify} />
+                                    <Toaster position="bottom-center"
+                                        reverseOrder={false}
+                                        gutter={8}
+                                        containerClassName=""
+                                        containerStyle={{}}
+                                        toastOptions={{
+                                            // Define default options
+                                            className: 'tost',
+                                            duration: 5000,
+                                            style: {
+                                                background: '#363636',
+                                                color: '#fff',
+                                            },
+
+                                            // Default options for specific types
+                                            success: {
+                                                duration: 3000,
+                                                theme: {
+                                                    primary: 'green',
+                                                    secondary: 'black',
+                                                },
+                                            },
+                                        }} />
                                 </div>
                             </form>
                         </div>

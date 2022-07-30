@@ -60,6 +60,17 @@
 
 }
 
+.tost {
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    height: 60px;
+    width: 120%;
+    margin: 10px;
+}
+
 .contact-content:hover {
     display: block;
     flex-direction: column;

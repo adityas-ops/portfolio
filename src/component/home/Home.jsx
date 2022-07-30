@@ -26,7 +26,7 @@ function Home() {
             <Typical loop={Infinity}
               steps={[
                 "Hi, 👋🏻 ",
-                2000,
+                4000,
                 "I'm Aditya Sharma ",
                 2000,
                 "I'm a Web Developer💻 ",
