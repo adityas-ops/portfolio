@@ -4,7 +4,7 @@ import btech from './btech.json';
 import high from './high1.json';
 import inter from './inter1.json';
 import './education.css';
-
+import Particle from './Particle';
 function Education() {
     const defaultOptions1 = {
         loop: true,
@@ -34,59 +34,62 @@ function Education() {
 
 
     return (
-        <div className='edu1'>
-            <div className='edu'>
-                <h2 className='edu-heading'>Education</h2>
-                <div className='edu-main'>
-                    <div className='edu-content'>
-                        <h4 className='h4'>B. Tech (2020-2024)</h4>
-                        {/* <br/> */}
-                        <p className='p-1'>
-                            I am a student of B. Tech in CS&IT.
-                            I'm currently studies in MAHATMA JYOTIBA PHULE ROHILKHAND UNIVERSITY, BAREILLY UTTAR PRADESH</p>
+        <>
+            <Particle />
+            <div className='edu1'>
+                <div className='edu'>
+                    <h3 className='edu-heading'>EDUCATION</h3>
+                    <div className='edu-main'>
+                        <div className='edu-content'>
+                            <h4 className='h4'>B. TECH (2020-2024)</h4>
+                            {/* <br/> */}
+                            <p className='p-1'>
+                                I AM A STUDENT OF B. TECH IN CS&IT.
+                                I'M CURRENTLY STUDIES IN  MAHATMA JYOTIBA PHULE ROHILKHAND UNIVERSITY, BAREILLY UTTAR PRADESH</p>
+                        </div>
+                        <div className='edu-image'>
+                            <Lottie
+                                options={defaultOptions}
+                                height={200}
+                                width={200}
+                            />
+                        </div>
                     </div>
-                    <div className='edu-image'>
-                        <Lottie
-                            options={defaultOptions}
-                            height={200}
-                            width={200}
-                        />
+                    <div className='edu-main'>
+                        <div className='edu-content'>
+                            <h4 className='h4'>INTERMEDIATE (2017-2019)</h4>
+                            {/* <br/> */}
+                            <p className='p-1'>
+                                I HAVE PASSED INTERMEDIATE EXAMINATION FROM M.A.V.M SENINOR SECONDARY SCHOOL KASIA KUSHINAGAR UTTAR PRADESH, BOARD OF UTTAR PRADESH BOARD WITH AGGREGATE 76%.
+                            </p>
+                        </div>
+                        <div className='edu-image'>
+                            <Lottie
+                                options={defaultOptions1}
+                                height={200}
+                                width={200}
+                            />
+                        </div>
                     </div>
-                </div>
-                <div className='edu-main'>
-                    <div className='edu-content'>
-                        <h4 className='h4'>Intermediate (2017-2019)</h4>
-                        {/* <br/> */}
-                        <p className='p-1'>
-                            I have passed Intermediate examination from Maharshi Arvind Vidya Mandir Kasia kushinagar, Board UTTAR PRADESH BOARD with aggregate 76%.
-                        </p>
-                    </div>
-                    <div className='edu-image'>
-                        <Lottie
-                            options={defaultOptions1}
-                            height={200}
-                            width={200}
-                        />
-                    </div>
-                </div>
-                <div className='edu-main'>
-                    <div className='edu-content'>
-                        <h4 className='h4'>High School (2015-2017)</h4>
-                        {/* <br/> */}
-                        <p className='p-1'>
-                            I have passed highschool examination from Maharshi Arvind Vidya Mandir Kasia kushinagar, Board UTTAR PRADESH BOARD with aggregate 85%.
-                        </p>
-                    </div>
-                    <div className='edu-image'>
-                        <Lottie
-                            options={defaultOptions2}
-                            height={200}
-                            width={200}
-                        />
+                    <div className='edu-main'>
+                        <div className='edu-content'>
+                            <h4 className='h4'>HIGH SCHOOL (2015-2017)</h4>
+                            {/* <br/> */}
+                            <p className='p-1'>
+                                I HAVE PASSED HIGH SCHOOL EXAMINATION FROM M.A.V.M SENINOR SECONDARY SCHOOL KASIA KUSHINAGAR UTTAR PRADESH, BOARD OF UTTAR PRADESH BOARD  WITH AGGREGATE 85%.
+                            </p>
+                        </div>
+                        <div className='edu-image'>
+                            <Lottie
+                                options={defaultOptions2}
+                                height={200}
+                                width={200}
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 

@@ -5,6 +5,7 @@ import animation from "./form.json";
 import emailjs from '@emailjs/browser';
 import { FaMailBulk, FaPhoneAlt, FaHome } from 'react-icons/fa';
 import toast, { Toaster } from 'react-hot-toast';
+import Particle from './Particle';
 
 const notify = () => toast('Response Submitted Successfully ✅');
 function Contact() {
@@ -34,6 +35,8 @@ function Contact() {
     };
 
     return (
+        <>
+        <Particle />
         <div className="contact1">
             <div className='contact'>
                 <h4 className='head-1'>Contact Us</h4>
@@ -123,6 +126,7 @@ function Contact() {
                 </div>
             </div>
         </div>
+        </>
 
     );
 }

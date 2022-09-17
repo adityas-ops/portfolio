@@ -34,6 +34,7 @@
     flex: 60%;
     /* display: flex; */
     display: block;
+    /* margin-top: 505px; */
     /* background-color: red;ß */
     /* justify-content: first baseline; */
 
@@ -41,9 +42,11 @@
 }
 
 .heading-d {
-    color: white;
+    color: black;
     font-size: 28px;
     font-weight: 800;
+    background-color: white;
+    margin-top: 550px;
 }
 
 h4 {
@@ -94,4 +97,87 @@ h2 {
 .dev {
     margin-top: 80px;
 
+}
+
+@media screen and (max-width: 420px) {
+    .Skills {
+        height: fit-content;
+        padding-top: 70px;
+    }
+
+    .Skills-container {
+        display: block;
+        padding-top: 0;
+    }
+
+    .Skills-container-right {
+        display: none;
+    }
+
+    .Skills-container-right {
+        display: none;
+    }
+
+    .Skills-container-left {
+        display: block;
+        margin-top: 40px;
+        padding-top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .Skills-container-right {
+        display: none;
+        margin-top: 0;
+        padding-top: 0;
+    }
+
+    .program {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+    }
+
+    .program-content {
+        margin: 40px;
+        margin-left: 0;
+        text-align: center;
+        align-items: center;
+    }
+
+    .dev {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .heading-d {
+        font-size: 24px;
+        font-weight: 600;
+        margin: 0;
+        text-align: center;
+    }
+
+    .n {
+        font-size: 30px;
+    }
+
+    h4 {
+        font-size: 15px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .program-content {
+        margin: 50px;
+    }
 }

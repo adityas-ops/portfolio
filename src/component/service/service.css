@@ -123,3 +123,60 @@ a:hover {
     }
 
 }
+
+@media screen and (max-width: 420px) {
+    .service-content {
+        width: 100%;
+        height: fit-content;
+        margin: 10px;
+    }
+
+    .service-anime {
+        width: 100%;
+        /* height: 100%; */
+        margin: 10px;
+    }
+
+    .heading-service {
+        font-size: 30px;
+    }
+
+    .para-service {
+        margin: 10px;
+    }
+
+    .content-heading {
+        font-size: 20px;
+    }
+
+    .ser2 {
+        font-size: 12px;
+    }
+
+    .main-service {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .ser1 {
+        /* width: 100%; */
+        max-width: fit-content;
+        /* height: 1900px; */
+    }
+
+    .service {
+        /* width: fit-content; */
+        min-width: 320px;
+    }
+
+    .para-service {
+        display: flex;
+        flex-direction: column;
+        font-size: 20px;
+    }
+
+    .ser2 {
+        margin: 10px;
+        font-size: 20px;
+    }
+}

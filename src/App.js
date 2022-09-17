@@ -3,18 +3,19 @@ import React from 'react';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import Home from './component/home/Home';
-import Navbar from './component/navbar/Navbar';
+// import Navbar from './component/navbar/Navbar1';
 import About from './component/about/About';
 import Education from './component/education/Education';
 import Skills from './component/skills/Skills';
 import Contact from './component/contact/Contact';
 import Service from './component/service/Service';
+import Navbar1 from './component/navbar/Navbar1';
 function App() {
   return (
 
     <div className='App'>
       <div className="App1">
-        <Navbar />
+        <Navbar1 />
       </div>
 
       <div className="App2">
