@@ -1,11 +1,34 @@
-import './contact.css';
 import React, { useRef } from 'react'
-import Lottie from "react-lottie";
-import animation from "./form.json";
 import emailjs from '@emailjs/browser';
 import { FaMailBulk, FaPhoneAlt, FaHome } from 'react-icons/fa';
 import toast, { Toaster } from 'react-hot-toast';
-import Particle from './Particle';
+import { Paper, Grid, Container, Typography, FormGroup, Button } from '@material-ui/core'
+import makeStyles from '@material-ui/core/styles/makeStyles';
+
+
+const useStyles = makeStyles((theme) => ({
+    Ypaper: {
+        padding: theme.spacing(2),
+        textAlign: 'center',
+        color: theme.palette.text.secondary,
+        paddingRight: '12px',
+        background: 'rgba(71,71,71,0.5)',
+
+    },
+    Heading: {
+        color: '#e91e63'
+
+    },
+    heading2: {
+        color: '#ec407a'
+    },
+    para: {
+        color: 'white'
+    },
+    span: {
+        color: '#ef5350'
+    }
+}));
 
 const notify = () => toast('Response Submitted Successfully ✅');
 function Contact() {
@@ -25,107 +48,91 @@ function Contact() {
     };
 
 
-    const defaultOptions1 = {
-        loop: true,
-        autoplay: true,
-        animationData: animation,
-        rendererSettings: {
-            preserveAspectRatio: "xMidYMid slice"
+    const item = [
+        {
+            icon: <FaMailBulk />,
+            title: 'Email',
+            text: 'adityakushinagar123@gmail.com'
+        },
+        {
+            icon: <FaPhoneAlt />,
+            title: 'Phone',
+            text: '+919792855377'
+        },
+        {
+            icon: <FaHome />,
+            title: 'Address',
+            text: 'Kushinagar, Uttar Pradesh'
+
         }
-    };
-
+    ]
+    const classes = useStyles();
     return (
+
+
         <>
-        <Particle />
-        <div className="contact1">
-            <div className='contact'>
-                <h4 className='head-1'>Contact Us</h4>
-                <div className='contact-main'>
+            <Container style={{ height: 'contentfit' }}>
+                <Typography variant='h3' className={classes.Heading} style={{ textAlign: 'center', padding: '20px', marginTop: '80px' }}>Contact</Typography>
+                <Grid container spacing={2} style={{ paddingTop: '50px' }}>
+                    <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+                        {item.map((item, index) => {
+                            return (
+                                <Paper className={classes.Ypaper} style={{ padding: '20px', margin: '20px' }}>
+                                    <Typography style={{ display: 'flex', justifyContent: 'center' }} variant='h5' className={classes.para}>{item.icon} <Typography style={{ paddingLeft: '18px' }} variant='h5' className={classes.heading2}> {item.title}</Typography></Typography>
 
-                    <div className='contact-point'>
-                        <div className='contact-content'>
-                            <div className='logof'>
-                                <FaMailBulk style={{ fontSize: "30" }} />
-                                <h5 className='head'>Email</h5>
-                            </div>
+                                    <Typography className={classes.para} variant='h6' >{item.text}  </Typography>
+                                </Paper>
+                            )
 
+                        }
+                        )}
+                    </Grid>
+                    <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+                        <Paper className={classes.Ypaper} style={{ padding: '20px', margin: '20px' }}>
+                            <Typography variant='h5' className={classes.Heading} style={{ textAlign: 'center' }}>Send Message</Typography>
+                            <form ref={form} onSubmit={sendEmail}>
+                                <FormGroup style={{ marginTop: '20px' }}>
 
-                            <p className='email'><a href='adityakushinagar123@gmail.com'>adityakushinagar123@gmail.com</a> </p>
-                        </div>
-                        <div className='contact-content'>
-                            <div className='logof'>
-                                <FaPhoneAlt style={{ fontSize: "30" }} />
-                                <h5 className='head'>Call</h5>
-                            </div>
+                                    <input type="text" name="user_name" placeholder='Name' style={{ width: '90%', padding: '10px', margin: '10px', border: 'none', outline: 'none', background: 'rgba(42,42,42,.8)', color: 'white', borderRadius: '8px' }} />
+                                </FormGroup>
+                                <FormGroup>
+                                    <input type="email" name="user_email" placeholder='Email' style={{ width: '90%', padding: '10px', margin: '10px', border: 'none', outline: 'none', background: 'rgba(42,42,42,.8)', color: 'white', borderRadius: '8px' }} />
+                                </FormGroup>
+                                <FormGroup>
+                                    <textarea name="message" placeholder='Message' style={{ width: '90%', padding: '10px', margin: '10px', border: 'none', outline: 'none', background: 'rgba(42,42,42,.8)', color: 'white', borderRadius: '8px' }} />
+                                </FormGroup>
+                                <Button type="submit" variant="contained" color="secondary" value="Send" style={{ width: '20%', padding: '10px', margin: '10px', border: 'none', outline: 'none', marginTop: '20px' }} onClick={notify}>Send</Button>
+                                <Toaster position="bottom-center"
+                                    reverseOrder={false}
+                                    gutter={5}
+                                    containerClassName=""
+                                    containerStyle={{}}
+                                    toastOptions={{
+                                        // Define default options
+                                        className: 'tost',
+                                        duration: 2000,
+                                        style: {
+                                            background: '#363636',
+                                            color: '#fff',
+                                        },
 
-
-                            <p className='email'>9792855377</p>
-                        </div>
-                        <div className='contact-content'>
-                            <div className='logof'>
-                                <FaHome style={{ fontSize: "30" }} />
-                                <h5 className='head'>Home</h5>
-                            </div>
-
-
-                            <p className='email'>Fazilnagar, Kushinagar</p>
-                        </div>
-                    </div>
-                    <div className='contact-container'>
-                        <div className='form'>
-                            <form ref={form} onSubmit={sendEmail}
-                            >
-                                <div className='main-form'>
-                                    <input type="text" placeholder='Name' className='input' name='from_name' />
-                                    <br />
-                                    <input type="email" placeholder='Email-Id' className='input' name='email' />
-                                    <br />
-                                    <input type="text" placeholder='Subject' className='input' name='subject' />
-                                    <br />
-                                    <textarea placeholder='Your Message' className='area' name='message' >
-
-                                    </textarea>
-                                    <br />
-                                    {/* <button type='submit' className='btn-nav sub'>Submit</button> */}
-                                    <input type="submit" value="Send" className='btn-nav sub' onClick={notify} />
-                                    <Toaster position="bottom-center"
-                                        reverseOrder={false}
-                                        gutter={8}
-                                        containerClassName=""
-                                        containerStyle={{}}
-                                        toastOptions={{
-                                            // Define default options
-                                            className: 'tost',
-                                            duration: 5000,
-                                            style: {
-                                                background: '#363636',
-                                                color: '#fff',
+                                        // Default options for specific types
+                                        success: {
+                                            duration: 3000,
+                                            theme: {
+                                                primary: 'green',
+                                                secondary: 'black',
                                             },
-
-                                            // Default options for specific types
-                                            success: {
-                                                duration: 3000,
-                                                theme: {
-                                                    primary: 'green',
-                                                    secondary: 'black',
-                                                },
-                                            },
-                                        }} />
-                                </div>
+                                        },
+                                    }} />
                             </form>
-                        </div>
-                        <div className="lottie">
-                            <Lottie options={defaultOptions1}
 
-                                height={600}
-                                width={600}
-                            />
+                        </Paper>
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                    </Grid>
+                </Grid>
+            </Container>
+
         </>
 
     );

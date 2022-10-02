@@ -7,7 +7,7 @@ body {
 }
 
 .App {
-  background-image: linear-gradient(to right top, #1854b0, #0050c7, #004add, #223eef, #4929ff);
+  background-color: rgb(42, 42, 42);
   background-size: cover;
   background-repeat: no-repeat;
   font-family: 'Ubuntu', sans-serif;

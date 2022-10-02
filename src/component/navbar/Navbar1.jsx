@@ -15,6 +15,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import './nav.css';
 import { NavLink } from 'react-router-dom';
+import { Paper } from '@mui/material';
 
 
 const drawerWidth = 280;
@@ -29,16 +30,21 @@ const Navbar1 = (props) => {
     };
 
     const drawer = (
-        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-            <img className='logo' src="logo.svg" alt="" />
+        <Box color='primary' onClick={handleDrawerToggle} style={{ alignItems: 'center', backgroundColor: 'rgb(42, 42, 42)', height: '100%', color: 'red' }} >
+            <Box style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img className='logo' src="logo.svg" alt="" />
+            </Box>
             <Divider />
             <List>
                 {navItems.map((text, index) => (
                     <ListItem button key={text}>
-                        <NavLink to={Link[index]} activeClassName="active">
-                            <ListItemText primary={text} />
-                        </NavLink>
-                        <Divider />
+                        <Paper elevation={3} style={{ width: '100%', textAlign: 'center', height: '40px', background: 'rgba(51,51,51,0.5)', color: 'white', fontSize: '24px' }}>
+
+                            <NavLink to={Link[index]} activeClassName="active" className='active'>
+                                <ListItemText primary={text} color='secondary' />
+                            </NavLink>
+                        </Paper>
+
                     </ListItem>
 
                 ))}
@@ -50,23 +56,25 @@ const Navbar1 = (props) => {
 
     return (
         <Box sx={{ display: 'flex' }}>
-            <AppBar component="nav" style={{ background: 'transparent', boxShadow: 'none', color: 'white' }} >
+            <AppBar component="nav" style={{ backgroundColor: 'rgb(42, 42, 42)' }} color='secondary' >
                 <Toolbar>
                     <IconButton
                         color="inherit"
                         aria-label="open drawer"
                         edge="start"
                         onClick={handleDrawerToggle}
-                        sx={{ mr: 2, display: { sm: 'none' }, color: 'white', fontWeight: 'bold' }}
+                        sx={{ mr: 2, display: { sm: 'none' }, color: 'white', fontWeight: 'bold', fontSize: '20px', textDecoration: 'none' }}
                     >
                         <MenuIcon />
                     </IconButton>
                     <Typography
                         variant="h6"
                         component="div"
+
                         sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+                        style={{ color: '#e91e63', fontSize: '30px', fontWeight: 'bold' }}
                     >
-                        ADITYA SHARMA
+                        PORTFOLIO
                     </Typography>
                     <Box sx={{ display: { xs: 'none', sm: 'block' }, color: '#ffffff' }}>
                         {navItems.map((item, index) => (
@@ -90,7 +98,7 @@ const Navbar1 = (props) => {
                     }}
                     sx={{
                         display: { xs: 'block', sm: 'none' },
-                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, color: 'red' },
                     }}
                 >
                     {drawer}

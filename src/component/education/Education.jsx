@@ -3,8 +3,32 @@ import Lottie from "react-lottie";
 import btech from './btech.json';
 import high from './high1.json';
 import inter from './inter1.json';
-import './education.css';
-import Particle from './Particle';
+import { Paper, Grid, Container, Typography } from '@material-ui/core'
+import makeStyles from '@material-ui/core/styles/makeStyles';
+
+
+const useStyles = makeStyles((theme) => ({
+    Ypaper: {
+        padding: theme.spacing(2),
+        textAlign: 'center',
+        color: theme.palette.text.secondary,
+        background: 'rgba(51,51,51,0.5)',
+    },
+    Heading: {
+        color: '#e91e63'
+
+    },
+    heading2: {
+        color: '#ec407a'
+    },
+    para: {
+        color: 'white'
+    },
+    span: {
+        color: '#ef5350'
+    }
+}));
+
 function Education() {
     const defaultOptions1 = {
         loop: true,
@@ -31,64 +55,51 @@ function Education() {
         }
     };
 
+    const item = [
+        {
+            title: 'B. TECH',
+            date: '(2020-2024)',
+            content: ' I AM A STUDENT OF B. TECH IN COMPUTER SCIENCE ENGINEERING.I AM CURRENTLY STUDIES IN  MAHATMA JYOTIBA PHULE ROHILKHAND UNIVERSITY, BAREILLY UTTAR PRADESH',
+            animation: defaultOptions
+        },
+        {
+            title: 'INTERMEDIATE',
+            date: '(2017 - 2019)',
+            content: ' I HAVE PASSED INTERMEDIATE EXAMINATION FROM M.A.V.M SENINOR SECONDARY SCHOOL KASIA KUSHINAGAR UTTAR PRADESH, BOARD OF UTTAR PRADESH BOARD.',
+            animation: defaultOptions1
+        },
+        {
+            title: 'HIGH SCHOOL',
+            date: '(2015 - 2017)',
+            content: ' I HAVE PASSED HIGH SCHOOL EXAMINATION FROM M.A.V.M SENINOR SECONDARY SCHOOL KASIA KUSHINAGAR UTTAR PRADESH, BOARD OF UTTAR PRADESH BOARD .',
+            animation: defaultOptions2
+        }
 
+    ]
+
+    const classes = useStyles();
 
     return (
+
         <>
-            <Particle />
-            <div className='edu1'>
-                <div className='edu'>
-                    <h3 className='edu-heading'>EDUCATION</h3>
-                    <div className='edu-main'>
-                        <div className='edu-content'>
-                            <h4 className='h4'>B. TECH (2020-2024)</h4>
-                            {/* <br/> */}
-                            <p className='p-1'>
-                                I AM A STUDENT OF B. TECH IN CS&IT.
-                                I'M CURRENTLY STUDIES IN  MAHATMA JYOTIBA PHULE ROHILKHAND UNIVERSITY, BAREILLY UTTAR PRADESH</p>
-                        </div>
-                        <div className='edu-image'>
-                            <Lottie
-                                options={defaultOptions}
-                                height={200}
-                                width={200}
-                            />
-                        </div>
-                    </div>
-                    <div className='edu-main'>
-                        <div className='edu-content'>
-                            <h4 className='h4'>INTERMEDIATE (2017-2019)</h4>
-                            {/* <br/> */}
-                            <p className='p-1'>
-                                I HAVE PASSED INTERMEDIATE EXAMINATION FROM M.A.V.M SENINOR SECONDARY SCHOOL KASIA KUSHINAGAR UTTAR PRADESH, BOARD OF UTTAR PRADESH BOARD WITH AGGREGATE 76%.
-                            </p>
-                        </div>
-                        <div className='edu-image'>
-                            <Lottie
-                                options={defaultOptions1}
-                                height={200}
-                                width={200}
-                            />
-                        </div>
-                    </div>
-                    <div className='edu-main'>
-                        <div className='edu-content'>
-                            <h4 className='h4'>HIGH SCHOOL (2015-2017)</h4>
-                            {/* <br/> */}
-                            <p className='p-1'>
-                                I HAVE PASSED HIGH SCHOOL EXAMINATION FROM M.A.V.M SENINOR SECONDARY SCHOOL KASIA KUSHINAGAR UTTAR PRADESH, BOARD OF UTTAR PRADESH BOARD  WITH AGGREGATE 85%.
-                            </p>
-                        </div>
-                        <div className='edu-image'>
-                            <Lottie
-                                options={defaultOptions2}
-                                height={200}
-                                width={200}
-                            />
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {/* <Particle /> */}
+            <Container style={{ height: 'contentfit' }}>
+                <Typography variant='h3' className={classes.Heading} style={{ textAlign: 'center', padding: '20px', marginTop: '80px' }}>Education</Typography>
+                <Grid container spacing={2} style={{ paddingTop: '50px' }}>
+
+                    {item.map((item, index) => (
+                        <Grid item xs={12} sm={4} key={index}>
+                            <Paper elevation={3} className={classes.Ypaper}>
+                                <Typography variant='h5' className={classes.heading2} style={{ display: 'flex', justifyContent: 'space-evenly', padding: '10px' }}>{item.title}
+                                    <Typography variant='h6' className={classes.para}>{item.date}</Typography>
+                                </Typography>
+                                <Typography variant='h6' className={classes.para} style={{ textAlign: 'center', padding: '20px', paddingTop: '10px' }}>{item.content}</Typography>
+                                <Lottie options={item.animation} height={200} width={200} />
+                            </Paper>
+                        </Grid>
+                    ))}
+                </Grid>
+            </Container>
         </>
     )
 }

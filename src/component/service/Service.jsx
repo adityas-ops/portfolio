@@ -3,12 +3,32 @@ import video from './video.json';
 import web from './web.json';
 import thinking from './thinking.json';
 import Lottie from "react-lottie";
-import './service.css';
-import Particle from './Particle';
+import { Paper, Grid, Container, Typography } from '@material-ui/core'
+import makeStyles from '@material-ui/core/styles/makeStyles';
 
 
+const useStyles = makeStyles((theme) => ({
+  Ypaper: {
+    padding: theme.spacing(2),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+    background: 'rgba(71,71,71,0.5)',
+    borderRadius: '12px'
+  },
+  Heading: {
+    color: '#e91e63'
 
-
+  },
+  heading2: {
+    color: '#ec407a'
+  },
+  para: {
+    color: 'white'
+  },
+  span: {
+    color: '#ef5350'
+  }
+}));
 
 function Service() {
 
@@ -36,61 +56,43 @@ function Service() {
       preserveAspectRatio: "xMidYMid slice"
     }
   };
-
+  const classes = useStyles();
+  const item = [
+    {
+      title: 'Web Development',
+      description: 'I have experience in developing websites using React, Node, Express, MongoDB, and other technologies.',
+      animation: defaultOptions
+    },
+    {
+      title: 'Photo Editing',
+      description: 'I have experience in editing photos using Adobe Photoshop and Lightroom. I can edit photos for you. ☺️',
+      animation: defaultOptions12
+    },
+    {
+      title: 'Problem Solving',
+      description: 'I have experience in problem solving using C++ and java. I have also participated in many coding competitions.',
+      animation: defaultOptions13
+    }
+  ]
   return (
     <>
-      <Particle />
-      <div className='ser1'>
-        <div className='service'>
-          <h3 className='heading-service'>What I do</h3>
-          <div className='main-service'>
-            <div className='service-content'>
-              <h3 className='content-heading'>Web Development</h3>
-              <p className='para-service'>I am technically skilled in front-end web development.I have acquired the skills and knowledge necessary to make your project a success. I enjoy every step of the design process, from discussion and collaboration.</p>
-            </div>
-            <div className='service-anime'>
-              <Lottie
-                options={defaultOptions}
-                height={300}
-                width={300}
-              />
-            </div>
-          </div>
-          <div className='main-service'>
-            <div className='service-content'>
-              <h3 className='content-heading'>Editing</h3>
-              <p className='para-service'>
+      <Container style={{ height: 'contentfit' }}>
+        <Typography variant='h3' className={classes.Heading} style={{ textAlign: 'center', padding: '20px', marginTop: '80px' }}>Services</Typography>
+        <Grid container spacing={2} style={{ paddingTop: '50px' }}>
+          {item.map((item, index) => (
+            <Grid item xs={12} sm={4} key={index}>
+              <Paper className={classes.Ypaper}>
+                <Lottie options={item.animation} height={200} width={200} />
+                <Typography variant='h5' className={classes.heading2}>{item.title}</Typography>
+                <Typography variant='body1' className={classes.para}>{item.description}</Typography>
+              </Paper>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
 
-                As a Photo/video editor, I'll manage material such as camera footage, sound effects, graphics and special effects to produce a final film or video product.
-              </p>
-            </div>
-            <div className='service-anime'>
-              <Lottie
-                options={defaultOptions12}
-                height={300}
-                width={300}
-              />
-            </div>
-          </div>
-          <div className='main-service'>
-            <div className='service-content'>
-              <h3 className='content-heading'>Problem Solving</h3>
-              <p className='para-service'>I give contests on different coding platforms to develop problem solving skills.<br /><br />
-                <a className='ser2' href='https://www.codechef.com/users/goldminati' target='_blank' rel='noopener noreferrer'>Codechef</a>
-                <a className='ser2' href='https://leetcode.com/aditya-ops/' target='_blank' rel='noopener noreferrer'>Leetcode</a>
-                <a className='ser2' href='https://codeforces.com/profile/adityaops' target='_blank' rel='noopener noreferrer'>CodeForce</a>
-              </p>
-            </div>
-            <div className='service-anime'>
-              <Lottie
-                options={defaultOptions13}
-                height={350}
-                width={350}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+
+
     </>
   )
 }
