@@ -78,7 +78,7 @@ const Navbar1 = (props) => {
                     </Typography>
                     <Box sx={{ display: { xs: 'none', sm: 'block' }, color: '#ffffff' }}>
                         {navItems.map((item, index) => (
-                            <Button key={item} sx={{ color: 'white', fontWeight: '600', fontSize: '16px', margin: '20px' }} component={NavLink} to={Link[index]}>
+                            <Button key={item} sx={{ color: 'white', fontWeight: '600', fontSize: '16px', margin: '12px' }} component={NavLink} to={Link[index]}>
                                 {item}
                             </Button>
                         ))}
