@@ -73,7 +73,7 @@ function About() {
     return (
         <>
             {/* <Particle /> */}
-            <Container style={{ height: 'contentfit', marginTop: '100px' }} className='container'>
+            <Container style={{ height: 'contentfit', paddingTop: '100px', overflow: 'hidden', marginBottom: '0px', paddingBottom: '0px' }} >
                 <Grid container spacing={2} style={{ paddingTop: '100px' }}>
                     <Grid item xs={12} sm={6} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                         <Paper elevation={3} className={classes.Ypaper} >

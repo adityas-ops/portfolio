@@ -86,7 +86,7 @@ function Skills() {
 
 
         <>
-            <Container style={{ height: 'contentfit' }}>
+            <Container style={{ height: 'contentfit', overflow: 'hidden' }}>
 
                 <Typography variant='h3' className={classes.Heading} style={{ textAlign: 'center', padding: '20px', marginTop: '80px' }}>Skills</Typography>
 

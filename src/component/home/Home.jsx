@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
   },
   span: {
     color: '#ffee58'
-  }
+  },
 }));
 
 
@@ -70,7 +70,7 @@ function Home() {
   return (
     <>
 
-      <Container style={{ height: 'contentfit' }}>
+      <Container style={{ height: 'contentfit', overflow: 'hidden' }}   >
         <Paper className={classes.Ypaper} elevation={3} style={{ marginTop: '200px' }}>
           <Grid container spacing={2} style={{ paddingTop: '50px' }}>
             <Grid item xs={12} sm={12} md={6} lg={6}>
