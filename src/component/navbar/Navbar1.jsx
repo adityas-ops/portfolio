@@ -74,7 +74,9 @@ const Navbar1 = (props) => {
                         sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
                         style={{ color: '#e91e63', fontSize: '30px', fontWeight: 'bold' }}
                     >
+                         <NavLink to="/" activeClassName="active" className='active'>
                         PORTFOLIO
+                          </NavLink>
                     </Typography>
                     <Box sx={{ display: { xs: 'none', sm: 'block' }, color: '#ffffff' }}>
                         {navItems.map((item, index) => (
