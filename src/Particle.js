@@ -28,7 +28,7 @@ function Particle() {
             value: "white",
           },
         },
-        fpsLimit: 120,
+        fpsLimit: 220,
         interactivity: {
           events: {
             onClick: {
@@ -36,31 +36,32 @@ function Particle() {
               mode: "push",
             },
             onHover: {
-              enable: true,
+              enable: false,
               mode: "repulse",
             },
             resize: true,
           },
           modes: {
             push: {
-              quantity: 10,
+              quantity: 1,
             },
             repulse: {
-              distance: 2,
-              duration: 1,
+              distance: 7,
+              duration: 7,
             },
           },
         },
         particles: {
           color: {
-            value: "#ffffff",
+            value: ["#fafafa", '#d32f2f'],
           },
+
           links: {
             color: "transparent",
             distance: 400,
             enable: true,
             opacity: 1,
-            width: .1,
+            width: 1,
           },
           collisions: {
             enable: true,
@@ -71,9 +72,9 @@ function Particle() {
             outModes: {
               default: "bounce",
             },
-            random: false,
-            speed: 4,
-            straight: false,
+            random: true,
+            speed: 2,
+            straight: true,
           },
           number: {
             density: {
@@ -83,13 +84,13 @@ function Particle() {
             value: 50,
           },
           opacity: {
-            value: 0.5,
+            value: 1,
           },
           shape: {
-            type: "circle",
+            type: ["circle", "square", "triangle"],
           },
           size: {
-            value: { min: 1, max: 1 },
+            value: { min: 1, max: 3 },
           },
         },
         detectRetina: true,
