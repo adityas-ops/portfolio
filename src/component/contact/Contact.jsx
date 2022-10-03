@@ -52,7 +52,7 @@ function Contact() {
         {
             icon: <FaMailBulk />,
             title: 'Email',
-            text: 'adityakushinagar123@gmail.com'
+            text: 'goldminati@gmail.com'
         },
         {
             icon: <FaPhoneAlt />,
@@ -77,8 +77,8 @@ function Contact() {
                     <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
                         {item.map((item, index) => {
                             return (
-                                <Paper className={classes.Ypaper} style={{ padding: '20px', margin: '20px' }}>
-                                    <Typography style={{ display: 'flex', justifyContent: 'center' }} variant='h5' className={classes.para}>{item.icon} <Typography style={{ paddingLeft: '18px' }} variant='h5' className={classes.heading2}> {item.title}</Typography></Typography>
+                                <Paper className={classes.Ypaper} style={{ padding: '20px', margin: '20px', display: 'flex', flexDirection: 'column', flexWrap: 'wrap' }}>
+                                    <Typography style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', overflow: 'hidden' }} variant='h5' className={classes.para}>{item.icon} <Typography style={{ paddingLeft: '18px' }} variant='h5' className={classes.heading2}> {item.title}</Typography></Typography>
 
                                     <Typography className={classes.para} variant='h6' >{item.text}  </Typography>
                                 </Paper>

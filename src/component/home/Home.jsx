@@ -90,7 +90,7 @@ function Home() {
                   />
                 </Typography>
                 <Typography variant='h6' className={classes.para} style={{ textAlign: 'center' }}>
-                  “Practice, Practice, Practice! Musicians don’t only play when they are on stage in front of an audience.”— Michael Toppa
+                  “If debugging is the process of removing bugs, then programming must be the process of putting them in.”
                 </Typography>
                 {
                   icon.map((item) => {
