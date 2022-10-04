@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     color: theme.palette.text.secondary,
     background: 'rgba(51,51,51,0.5)',
+    zIndex:'100'
   },
   Heading: {
     color: '#e91e63'
