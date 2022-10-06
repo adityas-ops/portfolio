@@ -92,7 +92,7 @@ function About() {
                     </Grid>
                     <Grid item xs={12} sm={6} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                         <Paper className={classes.Ypaper} elevation={3} style={{ height: '420px', width: '390px', display: 'flex', alignItems: "center", justifyContent: "center" }}>
-                            <img src='aditya.jpg' alt='aditya' style={{ width: '350px', height: '380px' }} />
+                            <img src='aditya.jpg' alt='aditya' style={{ width: '350px', height: '380px',objectFit:'cover' }} />
                         </Paper>
                     </Grid>
 
