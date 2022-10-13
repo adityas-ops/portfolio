@@ -114,7 +114,7 @@ function Home() {
                   </Button>
                 </NavLink>
 
-                <Button variant="contained" color="secondary" href='alr.pdf' style={{}}>
+                <Button variant="contained" color="secondary" href='Aditya-Sharma.pdf' style={{}}>
                   Resume
                 </Button>
 
