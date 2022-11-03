@@ -1,5 +1,6 @@
 import React from 'react'
-import { Paper, Grid, Container, Typography, Button } from '@material-ui/core'
+import { useState } from 'react';
+import { Paper, Grid, Container, Typography, Button, Card } from '@material-ui/core'
 import makeStyles from '@material-ui/core/styles/makeStyles';
 import { FaGithub, FaHackerrank } from 'react-icons/fa';
 import { SiLeetcode, SiCodeforces, SiCodechef, SiGeeksforgeeks } from 'react-icons/si';
@@ -69,6 +70,10 @@ function About() {
 
 
     ]
+    const [state, setState] = useState({
+        raised: false,
+        shadow: 1,
+    })
 
     return (
         <>
@@ -76,7 +81,11 @@ function About() {
             <Container style={{ height: 'contentfit', paddingTop: '100px', overflow: 'hidden', marginBottom: '0px', paddingBottom: '0px' }} >
                 <Grid container spacing={2} style={{ paddingTop: '100px' }}>
                     <Grid item xs={12} sm={6} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <Paper elevation={3} className={classes.Ypaper} >
+                        <Card
+                            onMouseOver={() => setState({ raised: true, shadow: 6 })}
+                            onMouseOut={() => setState({ raised: false, shadow: 1 })}
+                            raised={state.raised} zDepth={state.shadow}
+                            className={classes.Ypaper} >
                             <Typography variant='h3' className={classes.Heading} style={{ textAlign: 'center', padding: '20px' }}>About Me</Typography>
                             <Typography variant='h6' className={classes.para} color='theme.palette.text.primary' style={{ textAlign: 'center', padding: '20px', paddingTop: '10px' }}>I am a <span className={classes.Heading} >Full Stack Web Developer</span>  with a background in Computer Science. I have a passion for learning and creating new things. I am currently looking for a position where I can utilize my skills and grow as a developer.</Typography>
                             {
@@ -88,12 +97,16 @@ function About() {
                                 )
 
                             }
-                        </Paper>
+                        </Card>
                     </Grid>
                     <Grid item xs={12} sm={6} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <Paper className={classes.Ypaper} elevation={3} style={{ height: '420px', width: '390px', display: 'flex', alignItems: "center", justifyContent: "center" }}>
-                            <img src='aditya.jpg' alt='aditya' style={{ width: '350px', height: '380px',objectFit:'cover' }} />
-                        </Paper>
+                        <Card
+                            onMouseOver={() => setState({ raised: true, shadow: 6 })}
+                            onMouseOut={() => setState({ raised: false, shadow: 1 })}
+                            raised={state.raised} zDepth={state.shadow}
+                            className={classes.Ypaper} style={{ height: '420px', width: '390px', display: 'flex', alignItems: "center", justifyContent: "center" }}>
+                            <img src='aditya.jpg' alt='aditya' style={{ width: '350px', height: '380px' }} />
+                        </Card>
                     </Grid>
 
 

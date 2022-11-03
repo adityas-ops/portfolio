@@ -3,7 +3,7 @@ import Lottie from "react-lottie";
 import coder from './coding.json'
 import Typical from 'react-typical'
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
-import { Paper, Grid, Container, Typography, Button, Box } from '@material-ui/core'
+import { Paper, Grid, Container, Typography, Button, Box, Card } from '@material-ui/core'
 import makeStyles from '@material-ui/core/styles/makeStyles';
 import { NavLink } from 'react-router-dom';
 
@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     color: theme.palette.text.secondary,
     background: 'rgba(51,51,51,0.5)',
-    zIndex:'100'
+    zIndex: '100'
   },
   Heading: {
     color: '#e91e63'

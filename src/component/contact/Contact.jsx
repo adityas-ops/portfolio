@@ -1,8 +1,8 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import emailjs from '@emailjs/browser';
 import { FaMailBulk, FaPhoneAlt, FaHome } from 'react-icons/fa';
 import toast, { Toaster } from 'react-hot-toast';
-import { Paper, Grid, Container, Typography, FormGroup, Button } from '@material-ui/core'
+import { Paper, Grid, Container, Typography, FormGroup, Button, Card } from '@material-ui/core'
 import makeStyles from '@material-ui/core/styles/makeStyles';
 
 
@@ -66,6 +66,10 @@ function Contact() {
 
         }
     ]
+    const [state, setState] = useState({
+        raised: false,
+        shadow: 1,
+    })
     const classes = useStyles();
     return (
 
@@ -77,18 +81,26 @@ function Contact() {
                     <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
                         {item.map((item, index) => {
                             return (
-                                <Paper className={classes.Ypaper} style={{ padding: '20px', margin: '20px', display: 'flex', flexDirection: 'column', flexWrap: 'wrap' }}>
+                                <Card
+                                    onMouseOver={() => setState({ raised: true, shadow: 16 })}
+                                    onMouseOut={() => setState({ raised: false, shadow: 1 })}
+                                    raised={state.raised} zDepth={state.shadow}
+                                    className={classes.Ypaper} style={{ padding: '20px', margin: '20px', display: 'flex', flexDirection: 'column', flexWrap: 'wrap' }}>
                                     <Typography style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', overflow: 'hidden' }} variant='h5' className={classes.para}>{item.icon} <Typography style={{ paddingLeft: '18px' }} variant='h5' className={classes.heading2}> {item.title}</Typography></Typography>
 
                                     <Typography className={classes.para} variant='h6' >{item.text}  </Typography>
-                                </Paper>
+                                </Card>
                             )
 
                         }
                         )}
                     </Grid>
                     <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
-                        <Paper className={classes.Ypaper} style={{ padding: '20px', margin: '20px' }}>
+                        <Card
+                            onMouseOver={() => setState({ raised: true, shadow: 16 })}
+                            onMouseOut={() => setState({ raised: false, shadow: 1 })}
+                            raised={state.raised} zDepth={state.shadow}
+                            className={classes.Ypaper} style={{ padding: '20px', margin: '20px' }}>
                             <Typography variant='h5' className={classes.Heading} style={{ textAlign: 'center' }}>Send Message</Typography>
                             <form ref={form} onSubmit={sendEmail}>
                                 <FormGroup style={{ marginTop: '20px' }}>
@@ -127,7 +139,7 @@ function Contact() {
                                     }} />
                             </form>
 
-                        </Paper>
+                        </Card>
 
                     </Grid>
                 </Grid>

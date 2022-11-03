@@ -1,5 +1,5 @@
-import React from 'react'
-import { Paper, Grid, Container, Typography } from '@material-ui/core'
+import React, { useState } from 'react'
+import { Paper, Grid, Container, Typography, Card } from '@material-ui/core'
 import makeStyles from '@material-ui/core/styles/makeStyles';
 
 
@@ -79,7 +79,10 @@ function Skills() {
         }
 
     ]
-
+    const [state, setState] = useState({
+        raised: false,
+        shadow: 1,
+    })
 
     const classes = useStyles();
     return (
@@ -93,10 +96,14 @@ function Skills() {
                 <Grid container spacing={2} style={{ display: 'flex' }}>
                     {item.map((item) => (
                         <Grid item xs={12} sm={6} md={4} lg={3}>
-                            <Paper className={classes.Ypaper}>
+                            <Card
+                                onMouseOver={() => setState({ raised: true, shadow: 6 })}
+                                onMouseOut={() => setState({ raised: false, shadow: 1 })}
+                                raised={state.raised} zDepth={state.shadow}
+                                className={classes.Ypaper}>
                                 <img src={item.url} alt="ph" className={classes.img} />
                                 <Typography variant='h5' className={classes.para}>{item.name}</Typography>
-                            </Paper>
+                            </Card>
                         </Grid>
                     ))}
                 </Grid>

@@ -19,8 +19,8 @@ import { Paper } from '@mui/material';
 
 
 const drawerWidth = 280;
-const navItems = ['Home', 'About', 'Education', 'Skills', 'Service', 'Contact'];
-const Link = ["/Home", "/About", "/Education", "/Skills", "/Service", "/Contact"];
+const navItems = ['Home', 'About', 'Education', 'Skills', 'Contact'];
+const Link = ["/Home", "/About", "/Education", "/Skills", "/Contact"];
 const Navbar1 = (props) => {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -74,9 +74,9 @@ const Navbar1 = (props) => {
                         sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
                         style={{ color: '#e91e63', fontSize: '30px', fontWeight: 'bold' }}
                     >
-                         <NavLink to="/" activeClassName="active" className='active'>
-                        PORTFOLIO
-                          </NavLink>
+                        <NavLink to="/" activeClassName="active" className='active'>
+                            PORTFOLIO
+                        </NavLink>
                     </Typography>
                     <Box sx={{ display: { xs: 'none', sm: 'block' }, color: '#ffffff' }}>
                         {navItems.map((item, index) => (
