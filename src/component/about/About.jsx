@@ -58,7 +58,7 @@ function About() {
         {
             id: 5,
             icon: <FaHackerrank />,
-            link: "https://www.hackerrank.com/adityaops",
+            link: "https://www.hackerrank.com/adityakushinaga1?hr_r=1",
             name: "Hackerrank"
         },
         {
