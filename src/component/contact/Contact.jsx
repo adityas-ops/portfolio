@@ -74,9 +74,14 @@ function Contact() {
     return (
 
 
-        <>
+        <div id='contact'
+         style={{
+            paddingTop:"100px",
+            paddingBottom:"100px",
+         }}
+        >
             <Container style={{ height: 'contentfit', overflow: 'hidden' }}>
-                <Typography variant='h3' className={classes.Heading} style={{ textAlign: 'center', padding: '20px', marginTop: '80px' }}>Contact</Typography>
+                <Typography variant='h3' className={classes.Heading} style={{ textAlign: 'center', padding: '20px' }}>Contact</Typography>
                 <Grid container spacing={2} style={{ paddingTop: '50px' }}>
                     <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
                         {item.map((item, index) => {
@@ -145,7 +150,7 @@ function Contact() {
                 </Grid>
             </Container>
 
-        </>
+        </div>
 
     );
 }

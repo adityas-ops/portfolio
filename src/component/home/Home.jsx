@@ -3,9 +3,10 @@ import Lottie from "react-lottie";
 import coder from './coding.json'
 import Typical from 'react-typical'
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
-import { Paper, Grid, Container, Typography, Button, Box, Card } from '@material-ui/core'
+import { Paper, Grid, Container, Typography, Button, Box } from '@material-ui/core'
 import makeStyles from '@material-ui/core/styles/makeStyles';
 import { NavLink } from 'react-router-dom';
+import ScrollIntoView from "react-scroll-into-view";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -70,7 +71,7 @@ function Home() {
   const classes = useStyles();
   return (
     <>
-
+    <div id='home'>
       <Container style={{ height: 'contentfit', overflow: 'hidden' }}   >
         <Paper className={classes.Ypaper} elevation={3} style={{ marginTop: '200px' }}>
           <Grid container spacing={2} style={{ paddingTop: '50px' }}>
@@ -84,8 +85,6 @@ function Home() {
                       "I'm Aditya Sharma ",
                       2000,
                       "I'm a Web Developer💻 ",
-                      2000,
-                      "I'm Competitive Programmer😎 ",
                       2000,
                     ]}
                   />
@@ -108,11 +107,11 @@ function Home() {
               </Grid>
               <Box style={{ width: '100%', marginTop: '30px', display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
 
-                <NavLink to="/contact" style={{ color: 'white', textDecoration: 'none', width: '40%' }}>
-                  <Button variant="contained" color="secondary" style={{}}>
+                <ScrollIntoView selector="#contact">
+                  <Button variant="contained" color="secondary" style={{ marginRight: '20px' }}>
                     Contact Me
                   </Button>
-                </NavLink>
+                </ScrollIntoView>
 
                 <Button variant="contained" color="secondary" href='Aditya-Sharma.pdf' style={{}}>
                   Resume
@@ -131,7 +130,7 @@ function Home() {
           </Grid>
         </Paper>
       </Container>
-      {/* <Particle /> */}
+      </div>
 
     </>
   )

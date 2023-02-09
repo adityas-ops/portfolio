@@ -76,7 +76,9 @@ function About() {
     })
 
     return (
-        <>
+        <div style={{
+            paddingBottom:"50px"
+        }} id="about">
             {/* <Particle /> */}
             <Container style={{ height: 'contentfit', paddingTop: '100px', overflow: 'hidden', marginBottom: '0px', paddingBottom: '0px' }} >
                 <Grid container spacing={2} style={{ paddingTop: '100px' }}>
@@ -114,7 +116,7 @@ function About() {
             </Container>
 
 
-        </>
+        </div>
     )
 }
 
