@@ -91,7 +91,7 @@ function Cards({heading,imgLink,deploy,source}) {
                                         fontWeight:"700",
                                     }}
                                      color='primary' variant="contained" onClick={source1} >
-                                        Source Code
+                                        GitHub
                                     </Button>
                                  </CardActions>
                                
