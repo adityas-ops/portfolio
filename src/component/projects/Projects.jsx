@@ -13,7 +13,7 @@ function Projects() {
     },
     {
       heading: 'Chat GPT 2.0',
-      imgLink: 'img/chatGPT.png',
+      imgLink: 'img/chatGpt.png',
       deploy: 'https://chat-gpt-adityas-ops.vercel.app/',
       source: 'https://github.com/adityas-ops/chat-gpt'
     },
