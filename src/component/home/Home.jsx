@@ -18,7 +18,9 @@ const useStyles = makeStyles((theme) => ({
     zIndex: '100'
   },
   Heading: {
-    color: '#e91e63'
+    color: '#e91e63',
+    textTransform: 'uppercase',
+    fontWeight:"700"
 
   },
   heading2: {
@@ -113,7 +115,7 @@ function Home() {
                   </Button>
                 </ScrollIntoView>
 
-                <Button variant="contained" color="secondary" href='Aditya-Sharma.pdf' style={{}}>
+                <Button variant="contained" color="secondary" href='Aditya-Sharma-resume.pdf' style={{}}>
                   Resume
                 </Button>
 

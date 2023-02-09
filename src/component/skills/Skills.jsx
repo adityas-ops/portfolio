@@ -12,7 +12,9 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: '12px'
     },
     Heading: {
-        color: '#e91e63'
+        color: '#e91e63',
+        textTransform: 'uppercase',
+        fontWeight:"700"
 
     },
     heading2: {
