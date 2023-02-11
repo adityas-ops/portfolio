@@ -93,7 +93,7 @@ function Skills() {
         <div id='skills'>
             <Container style={{ height: 'contentfit', overflow: 'hidden' }}>
 
-                <Typography variant='h3' className={classes.Heading} style={{ textAlign: 'center', padding: '20px', marginTop: '80px' }}>Skills</Typography>
+                <Typography variant='h3' className={classes.Heading} style={{ textAlign: 'center', padding: '20px', marginTop: '80px',textDecoration:'underline' }}>Skills</Typography>
 
                 <Grid container spacing={2} style={{ display: 'flex' }}>
                     {item.map((item) => (

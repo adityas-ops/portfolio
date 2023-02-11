@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import emailjs from '@emailjs/browser';
 import { FaMailBulk, FaPhoneAlt, FaHome } from 'react-icons/fa';
 import toast, { Toaster } from 'react-hot-toast';
-import { Paper, Grid, Container, Typography, FormGroup, Button, Card } from '@material-ui/core'
+import {Grid, Container, Typography, FormGroup, Button, Card } from '@material-ui/core'
 import makeStyles from '@material-ui/core/styles/makeStyles';
 
 
@@ -27,9 +27,6 @@ const useStyles = makeStyles((theme) => ({
     para: {
         color: 'white'
     },
-    span: {
-        color: '#ef5350'
-    }
 }));
 
 const notify = () => toast('Response Submitted Successfully ✅');
@@ -83,7 +80,7 @@ function Contact() {
          }}
         >
             <Container style={{ height: 'contentfit', overflow: 'hidden' }}>
-                <Typography variant='h3' className={classes.Heading} style={{ textAlign: 'center', padding: '20px' }}>Contact</Typography>
+                <Typography variant='h3' className={classes.Heading} style={{ textAlign: 'center', padding: '20px' ,textDecoration:'underline'}}>Contact</Typography>
                 <Grid container spacing={2} style={{ paddingTop: '50px' }}>
                     <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
                         {item.map((item, index) => {
@@ -120,7 +117,7 @@ function Contact() {
                                 <FormGroup>
                                     <textarea name="message" placeholder='Message' style={{ width: '90%', padding: '10px', margin: '10px', border: 'none', outline: 'none', background: 'rgba(42,42,42,.8)', color: 'white', borderRadius: '8px' }} />
                                 </FormGroup>
-                                <Button type="submit" variant="contained" color="secondary" value="Send" style={{ width: '20%', padding: '10px', margin: '10px', border: 'none', outline: 'none', marginTop: '20px' }} onClick={notify}>Send</Button>
+                                <Button type="submit" variant="contained" color="primary" value="Send" style={{ width: '20%', padding: '10px', margin: '10px', border: 'none', outline: 'none', marginTop: '20px' }} onClick={notify}>Send</Button>
                                 <Toaster position="bottom-center"
                                     reverseOrder={false}
                                     gutter={5}

@@ -27,9 +27,6 @@ const useStyles = makeStyles((theme) => ({
   para: {
     color: 'white'
   },
-  span: {
-    color: '#ef5350'
-  }
 }));
 
 function Service() {
@@ -79,7 +76,7 @@ function Service() {
   return (
     <>
       <Container style={{ height: 'contentfit', overflow: 'hidden' }}>
-        <Typography variant='h3' className={classes.Heading} style={{ textAlign: 'center', padding: '20px', marginTop: '80px' }}>Services</Typography>
+        <Typography variant='h3' className={classes.Heading} style={{ textAlign: 'center', padding: '20px', marginTop: '80px',textDecoration:'underline' }}>Services</Typography>
         <Grid container spacing={2} style={{ paddingTop: '50px' }}>
           {item.map((item, index) => (
             <Grid item xs={12} sm={4} key={index}>

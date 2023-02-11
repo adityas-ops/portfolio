@@ -1,13 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Lottie from "react-lottie";
 import coder from './coding.json'
 import Typical from 'react-typical'
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
-import { Paper, Grid, Container, Typography, Button, Box } from '@material-ui/core'
+import { Paper, Grid, Container, Typography, Button, Box} from '@material-ui/core'
 import makeStyles from '@material-ui/core/styles/makeStyles';
-import { NavLink } from 'react-router-dom';
 import ScrollIntoView from "react-scroll-into-view";
-
+import MdAdd from '@mui/icons-material/Add';
+import {FloatingMenu,MainButton,ChildButton,Directions} from "react-floating-button-menu";
+import MdClose from "@material-ui/icons/Clear";
+import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+import CodeOutlinedIcon from '@mui/icons-material/CodeOutlined';
+import AccountTreeOutlinedIcon from '@mui/icons-material/AccountTreeOutlined';
+import ContactPageOutlinedIcon from '@mui/icons-material/ContactPageOutlined';
 
 const useStyles = makeStyles((theme) => ({
   Ypaper: {
@@ -30,7 +37,9 @@ const useStyles = makeStyles((theme) => ({
     color: 'white'
   },
   span: {
-    color: '#ffee58'
+    color: 'rgba(64,80,181)',
+    fontWeight: '700'
+
   },
 }));
 
@@ -71,6 +80,7 @@ function Home() {
   ]
 
   const classes = useStyles();
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <>
     <div id='home'>
@@ -83,10 +93,8 @@ function Home() {
                   <Typical loop={Infinity}
                     steps={[
                       "Hi, 👋🏻 ",
-                      4000,
-                      "I'm Aditya Sharma ",
                       2000,
-                      "I'm a Web Developer💻 ",
+                      "I'm Aditya Sharma.",
                       2000,
                     ]}
                   />
@@ -110,12 +118,12 @@ function Home() {
               <Box style={{ width: '100%', marginTop: '30px', display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
 
                 <ScrollIntoView selector="#contact">
-                  <Button variant="contained" color="secondary" style={{ marginRight: '20px' }}>
+                  <Button variant="contained" color="primary" style={{ marginRight: '20px' }}>
                     Contact Me
                   </Button>
                 </ScrollIntoView>
 
-                <Button variant="contained" color="secondary" href='Aditya-Sharma-resume.pdf' style={{}}>
+                <Button variant="contained" color="primary" href='Aditya-Sharma-resume.pdf'>
                   Resume
                 </Button>
 
@@ -132,7 +140,111 @@ function Home() {
           </Grid>
         </Paper>
       </Container>
+      
       </div>
+      <Box 
+       sx={{
+        zIndex:'100',
+        margin: 0,
+    top: 'auto',
+    right: 10,
+    bottom: 10,
+    left: 'auto',
+    position: 'fixed',
+        display:{
+          xs:'flex',
+          sm:'none',
+          md:'none',
+          lg:'none'
+        },
+       }}
+      >
+       <FloatingMenu
+        slideSpeed={500}
+        isOpen={isOpen}
+        spacing={20}
+        direction={Directions.Up}
+        className="menu-btn"
+      >
+        <MainButton
+          isOpen={isOpen}
+          iconResting={<MdAdd style={{ fontSize: 25,color:"white" }} />}
+          iconActive={<MdClose style={{ fontSize: 25, color:"white" }} />}
+          background="#e91e63"
+          onClick={() => {
+            setIsOpen((prev) => !prev);
+          }}
+          size={56}
+        />
+            <ChildButton
+          icon={<HomeOutlinedIcon style={{ color:"white" }} />}
+          background="#e91e63"
+          onClick={
+            () => {
+              setIsOpen((prev) => !prev);
+              window.location.href = '#home';
+            }
+          }
+
+          size={40}
+        />
+          <ChildButton
+          icon={<InfoOutlinedIcon style={{ color:'white' }} />}
+          background="#e91e63"
+          size={40}
+          onClick={
+            () => {
+              setIsOpen((prev) => !prev);
+              window.location.href = '#about';
+            }
+          }
+        />
+        <ChildButton
+          icon={<SchoolOutlinedIcon style={{color:"white"}}/>}
+          background="#e91e63"
+          size={40}
+          onClick={
+            ()=>{
+              setIsOpen((prev)=>!prev);
+              window.location.href='#education';
+            }
+          }
+        />
+        <ChildButton
+          icon={<CodeOutlinedIcon style={{color:"white"}}/>}
+          background="#e91e63"
+          size={40}
+          onClick={
+            ()=>{
+              setIsOpen((prev)=>!prev);
+              window.location.href='#skills';
+            }
+          }
+        />
+        <ChildButton
+          icon={<AccountTreeOutlinedIcon style={{color:"white"}}/>}
+          background="#e91e63"
+          size={40}
+          onClick={
+            ()=>{
+              setIsOpen((prev)=>!prev);
+              window.location.href='#Projects';
+            }
+          }
+        />
+        <ChildButton
+          icon={<ContactPageOutlinedIcon style={{color:"white"}}/>}
+          background="#e91e63"
+          size={40}
+          onClick={
+            ()=>{
+              setIsOpen((prev)=>!prev);
+              window.location.href='#contact';
+            }
+          }
+        />
+      </FloatingMenu>
+      </Box>
 
     </>
   )

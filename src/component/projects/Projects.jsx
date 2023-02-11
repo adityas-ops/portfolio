@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Container, Typography } from '@material-ui/core'
+import { Box, Container, Grid, Typography } from '@material-ui/core'
 import Cards from './Cards'
 
 function Projects() {
@@ -34,6 +34,7 @@ function Projects() {
 
   return (
     <div id='Projects'>
+    <Container style={{ height: 'contentfit', overflow: 'hidden' }}>
       <Box
         style={{
         width:"100%",
@@ -47,6 +48,7 @@ function Projects() {
           textTransform: 'uppercase',
           fontWeight:"700",
           marginTop:"150px"
+          ,textDecoration:'underline'
         }}
 
       >
@@ -60,19 +62,21 @@ function Projects() {
         style={{
         }}
       >
-        {Project.map((item, index) => {
-          return (
+       <Grid container spacing={3}>
+        {Project.map((item) => (
+          <Grid item xs={12} sm={6} md={6} lg={4}>
             <Cards
-              key={index}
               heading={item.heading}
               imgLink={item.imgLink}
               deploy={item.deploy}
               source={item.source}
             />
-          )
-        })}
+            </Grid>
+        ))}
+       </Grid>
       </Box>
       </Box>
+    </Container>
     </div>
   )
 }

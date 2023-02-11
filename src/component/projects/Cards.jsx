@@ -1,7 +1,6 @@
 import React from 'react'
-import { Button, Card, CardActions, CardContent, CardHeader, CardMedia, Container, Divider, Typography } from '@material-ui/core'
+import { Button, Card, CardActions, CardContent, CardMedia, Divider, Typography } from '@material-ui/core'
 import { useState } from 'react'
-// import Education from "../../img/ecom.png"
 
 function Cards({heading,imgLink,deploy,source}) {
     const [state, setState] = useState({
@@ -20,15 +19,23 @@ function Cards({heading,imgLink,deploy,source}) {
                                 onMouseOut={() => setState({ raised: false, shadow: 1 })}
                                 raised={state.raised} zDepth={state.shadow}
                                 style={{
-                                    margin: '50px',
+                                    margin: '20px',
                                     padding: '10px',
-                                    background: 'rgba(51,51,51,0.5)',
-                                    borderRadius: ''
+                                    background: 'rgba(51,51,51,0.5)',                            
+                                    display: 'flex',
+                                    justifyContent: 'center',
+                                    alignItems: 'center',
+                                    flexDirection: 'column',
+                                    borderRadius: '10px',
+                                    boxShadow: '0 8px 40px -12px rgba(0,0,0,0.3)',
+                                    transition: '0.3s',
+                                    position: 'relative',
+                                    overflow: 'initial',
                                 }}>
                                 <CardMedia
                                     component="img"
                                     alt="Contemplative Reptile"
-                                    height="240"
+                                    height="250"
                                     image={imgLink}
                                     />
                                 <CardContent

@@ -3,7 +3,7 @@ import Lottie from "react-lottie";
 import btech from './btech.json';
 import high from './high1.json';
 import inter from './inter1.json';
-import { Paper, Grid, Container, Typography, Card } from '@material-ui/core'
+import {Grid, Container, Typography, Card } from '@material-ui/core'
 import makeStyles from '@material-ui/core/styles/makeStyles';
 
 
@@ -26,9 +26,6 @@ const useStyles = makeStyles((theme) => ({
     para: {
         color: 'white'
     },
-    span: {
-        color: '#ef5350'
-    }
 }));
 
 function Education() {
@@ -90,7 +87,7 @@ function Education() {
         <div id='education'>
             {/* <Particle /> */}
             <Container style={{ height: 'contentfit', overflow: 'hidden' }}>
-                <Typography variant='h3' className={classes.Heading} style={{ textAlign: 'center', padding: '20px', marginTop: '80px' }}>Education</Typography>
+                <Typography variant='h3' className={classes.Heading} style={{ textAlign: 'center', padding: '20px', marginTop: '80px',textDecoration:'underline' }}>Education</Typography>
                 <Grid container spacing={2} style={{ paddingTop: '50px' }}>
 
                     {item.map((item, index) => (

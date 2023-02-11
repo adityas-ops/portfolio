@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
-import { Paper, Grid, Container, Typography, Button, Card } from '@material-ui/core'
+import { Grid, Container, Typography, Button, Card } from '@material-ui/core'
 import makeStyles from '@material-ui/core/styles/makeStyles';
 import { FaGithub, FaHackerrank } from 'react-icons/fa';
 import { SiLeetcode, SiCodeforces, SiCodechef, SiGeeksforgeeks } from 'react-icons/si';
@@ -20,9 +20,6 @@ const useStyles = makeStyles((theme) => ({
     para: {
         color: 'white'
     },
-    span: {
-        color: '#ef5350'
-    }
 }));
 
 
@@ -89,8 +86,8 @@ function About() {
                             onMouseOut={() => setState({ raised: false, shadow: 1 })}
                             raised={state.raised} zDepth={state.shadow}
                             className={classes.Ypaper} >
-                            <Typography variant='h3' className={classes.Heading} style={{ textAlign: 'center', padding: '20px' }}>About Me</Typography>
-                            <Typography variant='h6' className={classes.para} color='theme.palette.text.primary' style={{ textAlign: 'center', padding: '20px', paddingTop: '10px' }}>I am a <span className={classes.Heading} >Full Stack Web Developer</span>  with a background in Computer Science. I have a passion for learning and creating new things. I am currently looking for a position where I can utilize my skills and grow as a developer.</Typography>
+                            <Typography variant='h3' className={classes.Heading} style={{ textAlign: 'center',textDecoration:'underline' }}>About Me</Typography>
+                            <Typography variant='h6' className={classes.para} color='theme.palette.text.primary' style={{ textAlign: 'center', padding: '20px', paddingTop: '10px' }}>I am a <span className={classes.Heading} ><b>Full Stack Web Developer</b></span>  with a background in Computer Science. I have a passion for learning and creating new things. I am currently looking for a position where I can utilize my skills and grow as a developer.</Typography>
                             {
                                 icon.map((item) => {
                                     return (
@@ -107,8 +104,17 @@ function About() {
                             onMouseOver={() => setState({ raised: true, shadow: 6 })}
                             onMouseOut={() => setState({ raised: false, shadow: 1 })}
                             raised={state.raised} zDepth={state.shadow}
-                            className={classes.Ypaper} style={{ height: '420px', width: '390px', display: 'flex', alignItems: "center", justifyContent: "center" }}>
-                            <img src='aditya.jpg' alt='aditya' style={{ width: '350px', height: '380px' }} />
+                            className={classes.Ypaper} 
+                            style={{ 
+                                height: '420px', 
+                                width: '390px', 
+                                display: "flex",
+                                alignItems: "center", 
+                                justifyContent: "center",
+                                backgroundImage: "url(aditya.jpeg)",
+                                backgroundSize:"cover",
+                                 backgroundRepeat: "no-repeat"
+                                 }}>
                         </Card>
                     </Grid>
 
