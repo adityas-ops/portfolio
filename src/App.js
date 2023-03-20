@@ -9,15 +9,7 @@ import Contact from './component/contact/Contact';
 import Navbar1 from './component/navbar/Navbar1';
 import Projects from './component/projects/Projects';
 import Particle from './Particle';
-import Aos from "aos";
-import { useEffect } from 'react';
-import "aos/dist/aos.css";
 function App() {
-  useEffect(() => {
-    Aos.init({
-      once: true,
-    });
-  });
   return (
     <div className='App'>
       <Particle />
@@ -26,16 +18,16 @@ function App() {
       </div>
       <div className="App2">
         <Home />
-        <div data-aos="fade-zoom-in" data-aos-offset="400" data-aos-easing="ease-in-sine" data-aos-duration="600">
+        <div>
           <About />
         </div>
-        <div data-aos="fade-zoom-in" data-aos-offset="400" data-aos-easing="ease-in-sine" data-aos-duration="600">
+        <div>
           <Education />
         </div>
-        <div data-aos="fade-zoom-in" data-aos-offset="400" data-aos-easing="ease-in-sine" data-aos-duration="600">
+        <div>
           <Skills />
         </div>
-        <div data-aos="fade-zoom-in" data-aos-offset="400" data-aos-easing="ease-in-sine" data-aos-duration="600">
+        <div>
           <Projects />
         </div>
         <div >
